@@ -1,0 +1,29 @@
+generated: '2026-07-21'
+method: searched
+source: https://athena.skymavis.com/.well-known/openid-configuration
+docs: https://docs.skymavis.com/mavis/ronin-waypoint/overview
+schemes:
+- name: RoninWaypointOIDC
+  source: https://athena.skymavis.com/.well-known/openid-configuration
+  issuer: https://athena.skymavis.com/
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://athena.skymavis.com/oauth2/auth
+    tokenUrl: https://athena.skymavis.com/oauth2/token
+  - flow: clientCredentials
+    tokenUrl: https://athena.skymavis.com/oauth2/token
+scopes:
+- scope: openid
+  description: Standard OpenID Connect scope — issue an ID token identifying the Ronin Waypoint user.
+  flows: [authorizationCode]
+- scope: offline_access
+  description: Request a refresh token so the client can obtain new access tokens without re-authenticating.
+  flows: [authorizationCode]
+- scope: offline
+  description: Legacy alias for offline_access (refresh-token issuance) advertised in discovery.
+  flows: [authorizationCode]
+notes: >-
+  Scopes are read verbatim from the Waypoint OIDC discovery
+  (scopes_supported: [offline_access, offline, openid]). Application-specific
+  wallet/profile scopes may be provisioned per client in the Developer Console
+  and are not enumerated in the public discovery document.

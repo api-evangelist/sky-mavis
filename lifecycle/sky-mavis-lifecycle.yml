@@ -1,0 +1,29 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.skymavis.com/ + live host inspection
+versioning:
+  scheme: uri-path
+  current: v2
+  observed: >-
+    Gateway REST products carry the major version in the path
+    (e.g. /skynet/ronin/web3/v2/...). JSON-RPC is unversioned (Ethereum method set).
+  docs: https://docs.skymavis.com/
+status_page: https://skymavis.statuspage.io/
+networks:
+- name: Ronin Mainnet
+  chain_id: 2020
+  chain_id_hex: '0x7e4'
+  rpc: https://api.roninchain.com/rpc
+  verified: true
+- name: Saigon Testnet
+  rpc: https://saigon-testnet.roninchain.com/rpc
+  observed_chain_id_hex: '0x31769'
+  note: >-
+    Public testnet JSON-RPC is reachable (eth_chainId answered live). Chain-id
+    value recorded as observed verbatim; confirm against the current docs before
+    relying on it.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: No formal deprecation/Sunset (RFC 8594) policy located in the public docs.
+deprecated_operations: []

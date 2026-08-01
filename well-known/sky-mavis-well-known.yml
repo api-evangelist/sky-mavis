@@ -1,0 +1,28 @@
+generated: '2026-07-21'
+method: searched
+source: live probes of Sky Mavis / Ronin base hosts
+hosts:
+- host: https://athena.skymavis.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: sky-mavis-openid-configuration.json
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/security.txt
+    status: 404
+- host: https://api-gateway.skymavis.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+- host: https://www.roninchain.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+notes: >-
+  Ronin Waypoint (the Sky Mavis account service) publishes a full OpenID Connect
+  discovery document at athena.skymavis.com — issuer, authorization/token
+  endpoints, jwks_uri, PKCE methods, and supported grant types. No security.txt
+  or api-catalog was found on the developer/API hosts.

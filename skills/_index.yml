@@ -1,0 +1,12 @@
+generated: '2026-07-21'
+method: generated
+source: >-
+  Grounded in verified standard Ethereum JSON-RPC methods against the live Ronin
+  endpoint (https://api.roninchain.com/rpc, eth_chainId confirmed 0x7e4). Sky
+  Mavis publishes no OpenAPI spec; steps use industry-standard EVM JSON-RPC
+  method names, not invented operationIds.
+skills:
+- file: sky-mavis-read-ronin-chain.md
+  name: Read Ronin chain data via JSON-RPC
+  api: Ronin JSON-RPC API
+  operations: [eth_chainId, eth_blockNumber, eth_getBalance, eth_getTransactionByHash, eth_getTransactionReceipt, eth_call]

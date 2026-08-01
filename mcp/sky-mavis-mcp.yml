@@ -1,0 +1,33 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: >-
+  Derived from Sky Mavis documented API products (https://docs.skymavis.com/);
+  no official hosted MCP server was found in the docs, npm @modelcontextprotocol
+  scope, or MCP registries as of this pass. No OpenAPI spec is published to
+  ground per-operation tools, so tools below are product-level candidates.
+server:
+  name: sky-mavis
+  transport: http
+  url: null
+tools:
+- name: ronin_rpc_call
+  description: Make an Ethereum-compatible JSON-RPC call against the Ronin network (eth_chainId, eth_getBalance, eth_call, eth_getTransactionByHash, etc.).
+  source_product: Ronin JSON-RPC API
+  base: https://api.roninchain.com/rpc
+- name: skynet_get_account
+  description: Look up a Ronin account's balances and activity via the Skynet Web3 API.
+  source_product: Ronin Skynet Web3 API
+  auth: X-API-KEY
+- name: skynet_list_nfts
+  description: List NFTs / collection items owned by an address on Ronin.
+  source_product: Ronin Skynet Web3 API
+  auth: X-API-KEY
+- name: skynet_get_transaction
+  description: Fetch a transaction and its receipt by hash from the Skynet Web3 API.
+  source_product: Ronin Skynet Web3 API
+  auth: X-API-KEY
+- name: origins_leaderboards
+  description: Read Axie Infinity Origins game data (leaderboards, seasons, battles).
+  source_product: Axie Infinity Origins API
+  auth: X-API-KEY

@@ -1,0 +1,34 @@
+# Sky Mavis (Ronin)
+
+> Sky Mavis is the studio behind Axie Infinity and Ronin, an EVM blockchain built for games with player-owned economies. Its developer platform exposes API-gateway products for building on Ronin — the Skynet Web3 data API, a Ronin JSON-RPC endpoint, Axie Infinity game-data APIs, Ronin Market/Store partner APIs, and Ronin Waypoint (an OAuth2/OIDC account service and keyless wallet). Gateway products authenticate with an X-API-KEY from the Ronin Developer Console; public JSON-RPC and the Waypoint OIDC surface are openly reachable.
+
+## APIs
+- [Ronin Skynet Web3 API](https://docs.skymavis.com/): REST Web3 data over Ronin — accounts, NFTs, tokens, blocks, contracts, transactions. Base: https://api-gateway.skymavis.com/skynet (X-API-KEY).
+- [Ronin JSON-RPC API](https://docs.skymavis.com/): Ethereum-compatible JSON-RPC. Public mainnet base: https://api.roninchain.com/rpc (chain 2020).
+- [Ronin Waypoint Account Service](https://docs.skymavis.com/mavis/ronin-waypoint/overview): OAuth2/OIDC account + keyless wallet. Issuer: https://athena.skymavis.com/.
+- [Axie Infinity Origins API](https://docs.skymavis.com/): Game data — items, leaderboards, battles, seasons (X-API-KEY).
+- [Ronin Market / Store Partner APIs](https://docs.skymavis.com/): NFT marketplace and in-game store integration (X-API-KEY).
+
+## Auth
+- [Authentication profile](authentication/sky-mavis-authentication.yml): X-API-KEY header + Ronin Waypoint OAuth2/OIDC (PKCE).
+- [OAuth scopes](scopes/sky-mavis-scopes.yml): openid, offline_access, offline (from Waypoint OIDC discovery).
+- [OIDC discovery](well-known/sky-mavis-openid-configuration.json): athena.skymavis.com discovery document.
+
+## SDKs
+- [Packages](packages/sky-mavis-packages.yml): @sky-mavis/waypoint, @sky-mavis/tanto-connect, @sky-mavis/tanto-widget, @roninnetwork/walletgo (npm); waypoint-unity/-android/-iOS, ronin-market-sdk, katana-sdk (GitHub).
+- [Embedded components](components/sky-mavis-components.yml): Tanto Widget / Tanto Connect wallet UI.
+
+## Reference artifacts
+- [Conventions](conventions/sky-mavis-conventions.yml)
+- [Error catalog](errors/sky-mavis-problem-types.yml)
+- [Conformance](conformance/sky-mavis-conformance.yml)
+- [Lifecycle + networks](lifecycle/sky-mavis-lifecycle.yml)
+- [Sandbox / Saigon testnet](sandbox/sky-mavis-sandbox.yml)
+- [Domain security](security/sky-mavis-domain-security.yml)
+
+## Docs
+- [Developer Console](https://developers.roninchain.com/)
+- [Documentation](https://docs.skymavis.com/)
+- [Getting started](https://docs.skymavis.com/get-started)
+- [GitHub org](https://github.com/skymavis)
+- [Status page](https://skymavis.statuspage.io/)

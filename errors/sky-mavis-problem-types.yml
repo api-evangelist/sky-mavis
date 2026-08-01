@@ -1,0 +1,36 @@
+generated: '2026-07-21'
+method: searched
+source: live responses from api-gateway.skymavis.com + https://docs.skymavis.com/
+format: json-message-envelope
+envelope:
+  shape: '{"message": "<human readable reason>"}'
+  content_type: application/json
+  note: >-
+    The Ronin API gateway returns a bare JSON object with a single "message"
+    field (not RFC 9457 problem+json). The JSON-RPC endpoint returns standard
+    JSON-RPC 2.0 error objects ({"jsonrpc":"2.0","error":{"code","message"}}).
+problems:
+- status: 401
+  observed_message: No API key found in request
+  meaning: Request to a gateway product carried no X-API-KEY header.
+  remediation: Attach the X-API-KEY header with a key issued from the Ronin Developer Console.
+  source: live probe of /skynet/ronin/web3/v2/accounts
+- status: 401
+  meaning: Supplied API key is invalid, disabled, or lacks access to the requested product.
+  remediation: Verify the key and its product entitlements in the Developer Console.
+- status: 403
+  meaning: Key is valid but not authorized for the requested resource or plan tier.
+  remediation: Request the required product access / upgrade the app's plan.
+- status: 429
+  meaning: Rate limit exceeded for the app's plan tier.
+  remediation: Back off and retry; upgrade the plan for higher throughput.
+- status: 404
+  meaning: Resource (account, NFT, contract, transaction) not found on the queried network.
+  remediation: Confirm the address/hash and the target network (mainnet vs Saigon testnet).
+jsonrpc_errors:
+- code: -32601
+  meaning: Method not found (unsupported JSON-RPC method).
+- code: -32602
+  meaning: Invalid params.
+- code: -32000
+  meaning: Server error (e.g. execution reverted, insufficient funds).

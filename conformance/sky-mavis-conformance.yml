@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: derived
+source: live probes + https://docs.skymavis.com/ + Waypoint OIDC discovery
+standards:
+- id: ethereum-json-rpc
+  conforms: true
+  evidence: >-
+    api.roninchain.com/rpc answers standard Ethereum JSON-RPC methods
+    (eth_chainId returned 0x7e4). Ronin is an EVM chain.
+- id: oauth2
+  conforms: true
+  evidence: Waypoint discovery advertises authorization_code, client_credentials, refresh_token and implicit grant types.
+- id: oidc
+  conforms: true
+  evidence: athena.skymavis.com publishes /.well-known/openid-configuration with issuer, token and jwks endpoints.
+- id: oauth2-pkce
+  conforms: true
+  evidence: code_challenge_methods_supported present in Waypoint OIDC discovery.
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: No /.well-known/security.txt found on developer/API/apex hosts.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: 'Gateway error bodies use a bare {"message": ...} envelope, not application/problem+json.'
+- id: erc-721
+  conforms: true
+  evidence: Skynet Web3 API and Ronin Market surface ERC-721 NFT metadata on the Ronin EVM chain.

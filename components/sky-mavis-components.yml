@@ -1,0 +1,22 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/skymavis/tanto-kit + https://www.npmjs.com/package/@sky-mavis/tanto-widget
+summary: >-
+  Sky Mavis ships prebuilt client-side UI for wallet onboarding on Ronin via the
+  Tanto Kit family — a connect-wallet widget and connection primitives that dApps
+  embed rather than build themselves. Distinct from the server-side SDKs in
+  packages/.
+families:
+- name: Tanto Kit
+  repo: https://github.com/skymavis/tanto-kit
+  components:
+  - name: Tanto Widget
+    package: "@sky-mavis/tanto-widget"
+    kind: embeddable connect-wallet widget
+    description: Prebuilt, drop-in "connect wallet" modal/button UI for Ronin dApps.
+    url: https://www.npmjs.com/package/@sky-mavis/tanto-widget
+  - name: Tanto Connect
+    package: "@sky-mavis/tanto-connect"
+    kind: wallet-connection library / hooks
+    description: Connection primitives powering the widget (wallet discovery, connect/disconnect, account state).
+    url: https://www.npmjs.com/package/@sky-mavis/tanto-connect

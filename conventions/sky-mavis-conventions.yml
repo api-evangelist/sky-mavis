@@ -1,0 +1,33 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.skymavis.com/ + live probes + Waypoint OIDC discovery
+authentication:
+  gateway: API key in the X-API-KEY request header (issued per app from the Ronin Developer Console).
+  waypoint: OAuth2 / OIDC bearer tokens from athena.skymavis.com (PKCE supported).
+  public_rpc: The public mainnet JSON-RPC endpoint accepts unauthenticated read/broadcast calls.
+  cross_ref: authentication/sky-mavis-authentication.yml
+idempotency:
+  supported: false
+  note: >-
+    No provider-documented idempotency-key header was found for the REST gateway
+    products. On-chain writes are idempotent by transaction nonce at the protocol
+    level (a re-broadcast of the same signed transaction is deduplicated by nonce),
+    but there is no application-level Idempotency-Key contract to advertise.
+versioning:
+  style: uri-path major version (e.g. /v2) for REST gateway products; JSON-RPC is unversioned.
+  cross_ref: lifecycle/sky-mavis-lifecycle.yml
+error_envelope:
+  rest: 'bare JSON object {"message": "..."} (not RFC 9457 problem+json)'
+  jsonrpc: standard JSON-RPC 2.0 error object
+  cross_ref: errors/sky-mavis-problem-types.yml
+pagination:
+  note: >-
+    Skynet Web3 list endpoints paginate; the exact cursor/limit parameters are
+    documented per-endpoint in the API reference and are not asserted here to
+    avoid guessing specific parameter names.
+networks:
+  selection: Requests target mainnet vs Saigon testnet by host/endpoint rather than by a header.
+rate_limiting:
+  note: >-
+    Throughput is governed by the app's Developer Console plan tier; exceeding it
+    returns HTTP 429. Specific per-tier limits are set in the console.

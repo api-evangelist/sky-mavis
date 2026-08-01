@@ -1,7 +1,30 @@
 aid: sky-mavis
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/sky-mavis.png
 name: Sky Mavis
-description: Sky Mavis is a company surfaced as a portfolio company of a16z and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Sky Mavis is the studio behind Axie Infinity and Ronin, an EVM blockchain
+  crafted for developers building games with player-owned economies. Its
+  developer platform exposes a set of API-gateway products for building on
+  Ronin: the Skynet Web3 API (query accounts, NFTs, tokens, blocks, contracts
+  and transactions), a Ronin JSON-RPC API for node connectivity, the Axie
+  Infinity Origins and AXP game-data APIs, Ronin Market and Ronin Store partner
+  APIs, and Ronin Waypoint, an OAuth2/OIDC account service and keyless wallet
+  for game onboarding. Access to gateway products is authenticated with an
+  X-API-KEY issued from the Ronin Developer Console, while public JSON-RPC and
+  the Waypoint OIDC surface are openly reachable. Official SDKs ship for
+  JavaScript/TypeScript, Unity, Android and iOS.
 url: https://raw.githubusercontent.com/api-evangelist/sky-mavis/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,12 +34,119 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
-apis: []
+- Blockchain
+- Web3
+- Gaming
+- NFT
+- Wallet
+- JSON-RPC
+- Cryptocurrency
+- Developer Tools
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- name: Ronin Skynet Web3 API
+  description: >-
+    REST Web3 data API on the Ronin blockchain — query accounts, NFTs, tokens,
+    collections, blocks, smart contracts and transactions. Authenticated with an
+    X-API-KEY issued from the Ronin Developer Console.
+  humanURL: https://docs.skymavis.com/api/web3/skynet-web-3-api
+  baseURL: https://api-gateway.skymavis.com/skynet
+  tags:
+  - Web3
+  - Blockchain
+  - NFT
+  properties:
+  - type: Authentication
+    url: authentication/sky-mavis-authentication.yml
+  - type: Conventions
+    url: conventions/sky-mavis-conventions.yml
+- name: Ronin JSON-RPC API
+  description: >-
+    Ethereum-compatible JSON-RPC endpoint for the Ronin network — read chain
+    state, submit transactions, call contracts, and subscribe to events. The
+    public mainnet endpoint is openly reachable; gateway JSON-RPC requires an
+    X-API-KEY.
+  humanURL: https://docs.skymavis.com/api/rpc/ronin-json-rpc
+  baseURL: https://api.roninchain.com/rpc
+  tags:
+  - JSON-RPC
+  - Blockchain
+  - EVM
+- name: Ronin Waypoint Account Service
+  description: >-
+    OAuth2 / OpenID Connect account service and keyless wallet for onboarding
+    players into Ronin games. Discovery is published at the athena.skymavis.com
+    issuer; supports authorization_code, client_credentials, refresh_token and
+    implicit grants with PKCE.
+  humanURL: https://docs.skymavis.com/mavis/ronin-waypoint/overview
+  baseURL: https://athena.skymavis.com
+  tags:
+  - OAuth
+  - OpenID Connect
+  - Wallet
+  properties:
+  - type: OAuthScopes
+    url: scopes/sky-mavis-scopes.yml
+common:
+- type: DeveloperPortal
+  url: https://developers.roninchain.com/
+- type: Documentation
+  url: https://docs.skymavis.com/
+- type: APIReference
+  url: https://docs.skymavis.com/api
+- type: GettingStarted
+  url: https://docs.skymavis.com/get-started
+- type: GitHubOrganization
+  url: https://github.com/skymavis
+- type: StatusPage
+  url: https://skymavis.statuspage.io/
+- type: Blog
+  url: https://blog.roninchain.com/
+- type: TermsOfService
+  url: https://cdn.skymavis.com/files/skymavis-terms-of-use-09012025.pdf
+- type: PrivacyPolicy
+  url: https://cdn.skymavis.com/files/skymavis-privacypolicy-10122024.pdf
+- type: SignUp
+  url: https://developers.roninchain.com/
+- type: Packages
+  url: packages/sky-mavis-packages.yml
+- type: SDKs
+  url: packages/sky-mavis-packages.yml
+- type: WellKnown
+  url: well-known/sky-mavis-well-known.yml
+- type: Authentication
+  url: authentication/sky-mavis-authentication.yml
+- type: OAuthScopes
+  url: scopes/sky-mavis-scopes.yml
+- type: Conventions
+  url: conventions/sky-mavis-conventions.yml
+- type: Conformance
+  url: conformance/sky-mavis-conformance.yml
+- type: ErrorCatalog
+  url: errors/sky-mavis-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/sky-mavis-lifecycle.yml
+- type: Sandbox
+  url: sandbox/sky-mavis-sandbox.yml
+- type: Components
+  url: components/sky-mavis-components.yml
+- type: MCPServer
+  url: mcp/sky-mavis-mcp.yml
+- type: LLMsTxt
+  url: llms/sky-mavis-llms.txt
+- type: AgentSkill
+  url: skills/_index.yml
+- type: DomainSecurity
+  url: security/sky-mavis-domain-security.yml
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 15
+  pass: local-v1

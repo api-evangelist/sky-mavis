@@ -1,0 +1,25 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.skymavis.com/ + live testnet RPC probe
+summary: >-
+  Ronin exposes a public Saigon testnet mirroring mainnet for development. dApps
+  build against the testnet RPC and faucet before promoting to mainnet; the same
+  X-API-KEY / Developer Console apps are used against test and live gateway
+  products, selected by network rather than by key prefix.
+environments:
+- name: Saigon Testnet
+  type: test
+  rpc: https://saigon-testnet.roninchain.com/rpc
+  verified_reachable: true
+  explorer: https://saigon-app.roninchain.com/
+  faucet: https://faucet.roninchain.com/
+  note: Free test RON is dispensed from the faucet for Saigon.
+- name: Ronin Mainnet
+  type: live
+  rpc: https://api.roninchain.com/rpc
+  chain_id: 2020
+test_values:
+  note: >-
+    Sky Mavis does not publish magic/static test tokens like a card processor;
+    testing is done end-to-end against the Saigon testnet with faucet-funded
+    accounts. No verbatim test credentials are published to capture here.
