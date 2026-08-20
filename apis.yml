@@ -41,6 +41,16 @@ tags:
 - Web3
 - Gaming
 - NFT
+- Wallets
+- JSON-RPC
+- Cryptocurrency
+- Developer Tools
+tags_raw:
+- Company
+- Blockchain
+- Web3
+- Gaming
+- NFT
 - Wallet
 - JSON-RPC
 - Cryptocurrency
@@ -88,6 +98,10 @@ apis:
   humanURL: https://docs.skymavis.com/mavis/ronin-waypoint/overview
   baseURL: https://athena.skymavis.com
   tags:
+  - Authentication
+  - OpenID Connect
+  - Wallets
+  tags_raw:
   - OAuth
   - OpenID Connect
   - Wallet
