@@ -24,18 +24,14 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/sky-mavis.png
 name: Sky Mavis
-description: >-
-  Sky Mavis is the studio behind Axie Infinity and Ronin, an EVM blockchain
-  crafted for developers building games with player-owned economies. Its
-  developer platform exposes a set of API-gateway products for building on
-  Ronin: the Skynet Web3 API (query accounts, NFTs, tokens, blocks, contracts
-  and transactions), a Ronin JSON-RPC API for node connectivity, the Axie
-  Infinity Origins and AXP game-data APIs, Ronin Market and Ronin Store partner
-  APIs, and Ronin Waypoint, an OAuth2/OIDC account service and keyless wallet
-  for game onboarding. Access to gateway products is authenticated with an
-  X-API-KEY issued from the Ronin Developer Console, while public JSON-RPC and
-  the Waypoint OIDC surface are openly reachable. Official SDKs ship for
-  JavaScript/TypeScript, Unity, Android and iOS.
+description: 'Sky Mavis is the studio behind Axie Infinity and Ronin, an EVM blockchain crafted for developers
+  building games with player-owned economies. Its developer platform exposes a set of API-gateway products
+  for building on Ronin: the Skynet Web3 API (query accounts, NFTs, tokens, blocks, contracts and transactions),
+  a Ronin JSON-RPC API for node connectivity, the Axie Infinity Origins and AXP game-data APIs, Ronin
+  Market and Ronin Store partner APIs, and Ronin Waypoint, an OAuth2/OIDC account service and keyless
+  wallet for game onboarding. Access to gateway products is authenticated with an X-API-KEY issued from
+  the Ronin Developer Console, while public JSON-RPC and the Waypoint OIDC surface are openly reachable.
+  Official SDKs ship for JavaScript/TypeScript, Unity, Android and iOS.'
 url: https://raw.githubusercontent.com/api-evangelist/sky-mavis/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -45,7 +41,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-07-21'
+modified: '2026-09-16'
 tags:
 - Company
 - Blockchain
@@ -73,10 +69,9 @@ maintainers:
   email: info@apis.io
 apis:
 - name: Ronin Skynet Web3 API
-  description: >-
-    REST Web3 data API on the Ronin blockchain — query accounts, NFTs, tokens,
-    collections, blocks, smart contracts and transactions. Authenticated with an
-    X-API-KEY issued from the Ronin Developer Console.
+  description: REST Web3 data API on the Ronin blockchain — query accounts, NFTs, tokens, collections,
+    blocks, smart contracts and transactions. Authenticated with an X-API-KEY issued from the Ronin Developer
+    Console.
   humanURL: https://docs.skymavis.com/api/web3/skynet-web-3-api
   baseURL: https://api-gateway.skymavis.com/skynet
   tags:
@@ -89,11 +84,9 @@ apis:
   - type: Conventions
     url: conventions/sky-mavis-conventions.yml
 - name: Ronin JSON-RPC API
-  description: >-
-    Ethereum-compatible JSON-RPC endpoint for the Ronin network — read chain
-    state, submit transactions, call contracts, and subscribe to events. The
-    public mainnet endpoint is openly reachable; gateway JSON-RPC requires an
-    X-API-KEY.
+  description: Ethereum-compatible JSON-RPC endpoint for the Ronin network — read chain state, submit
+    transactions, call contracts, and subscribe to events. The public mainnet endpoint is openly reachable;
+    gateway JSON-RPC requires an X-API-KEY.
   humanURL: https://docs.skymavis.com/api/rpc/ronin-json-rpc
   baseURL: https://api.roninchain.com/rpc
   tags:
@@ -101,11 +94,9 @@ apis:
   - Blockchain
   - EVM
 - name: Ronin Waypoint Account Service
-  description: >-
-    OAuth2 / OpenID Connect account service and keyless wallet for onboarding
-    players into Ronin games. Discovery is published at the athena.skymavis.com
-    issuer; supports authorization_code, client_credentials, refresh_token and
-    implicit grants with PKCE.
+  description: OAuth2 / OpenID Connect account service and keyless wallet for onboarding players into
+    Ronin games. Discovery is published at the athena.skymavis.com issuer; supports authorization_code,
+    client_credentials, refresh_token and implicit grants with PKCE.
   humanURL: https://docs.skymavis.com/mavis/ronin-waypoint/overview
   baseURL: https://athena.skymavis.com
   tags:
@@ -120,6 +111,8 @@ apis:
   - type: OAuthScopes
     url: scopes/sky-mavis-scopes.yml
 common:
+- type: Website
+  url: https://skymavis.com
 - type: DeveloperPortal
   url: https://developers.roninchain.com/
 - type: Documentation
@@ -164,7 +157,10 @@ common:
   url: components/sky-mavis-components.yml
 - type: X-MCPServerCandidate
   url: mcp/sky-mavis-mcp.yml
-  note: 'Renamed from MCPServer 2026-09-03 (roadmap#247): the manifest self-describes as status: candidate — a tool list derived from the published API contracts, not an existing server. The scorer already read the manifest and reported mcp_server correctly; the MCPServer type was crediting the artifact-type surfaces with a server that does not exist.'
+  note: 'Renamed from MCPServer 2026-09-03 (roadmap#247): the manifest self-describes as status: candidate
+    — a tool list derived from the published API contracts, not an existing server. The scorer already
+    read the manifest and reported mcp_server correctly; the MCPServer type was crediting the artifact-type
+    surfaces with a server that does not exist.'
 - type: LLMsTxt
   url: llms/sky-mavis-llms.txt
 - type: AgentSkill
